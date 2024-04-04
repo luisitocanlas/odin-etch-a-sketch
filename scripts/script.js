@@ -1,7 +1,11 @@
 const container = document.querySelector('#container');
+const btn = document.querySelector('#btn');
 
 const containerWidth = 960;
 const containerHeight = 960;
+
+const baseBgColor = '#003049';
+const alternateBgColor = '#669BBC';
 
 let cellSize = 16;
 let GRID_SIZE = cellSize ** 2;
@@ -16,12 +20,12 @@ for (let i = 0; i < GRID_SIZE; i++) {
 	);
 
 	cell.addEventListener('mouseenter', () => {
-		cell.style.backgroundColor = '#669BBC';
+		cell.style.backgroundColor = alternateBgColor;
 	});
 
 	cell.addEventListener('mouseleave', () => {
-		cell.style.transition = 'background-color 0.5s ease';
-		cell.style.backgroundColor = '#003049';
+		cell.style.transition = 'background-color 0.7s ease';
+		cell.style.backgroundColor = baseBgColor;
 	});
 
 	container.appendChild(cell);
