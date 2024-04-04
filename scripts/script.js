@@ -4,7 +4,7 @@ const btn = document.querySelector('#btn');
 const containerWidth = 960;
 const containerHeight = 960;
 
-const baseBgColor = '#003049';
+const defaultBgColor = '#003049';
 const alternateBgColor = '#669BBC';
 
 let cellSize = 16;
@@ -41,12 +41,12 @@ function generateGrid() {
 		);
 
 		cell.addEventListener('mouseenter', () => {
-			cell.style.backgroundColor = alternateBgColor;
+			cell.style.backgroundColor = getRGB();
 		});
 
 		cell.addEventListener('mouseleave', () => {
 			cell.style.transition = 'background-color 0.7s ease';
-			cell.style.backgroundColor = baseBgColor;
+			cell.style.backgroundColor = defaultBgColor;
 		});
 
 		container.appendChild(cell);
@@ -55,4 +55,12 @@ function generateGrid() {
 
 function removeGrid() {
 	container.innerHTML = '';
+}
+
+function getRGB() {
+	let r = Math.floor(Math.random() * 256);
+	let g = Math.floor(Math.random() * 256);
+	let b = Math.floor(Math.random() * 256);
+
+	return `rgb(${r}, ${g}, ${b})`;
 }
