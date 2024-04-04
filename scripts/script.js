@@ -15,5 +15,14 @@ for (let i = 0; i < GRID_SIZE; i++) {
     height: ${containerHeight / cellSize}px;`
 	);
 
+	cell.addEventListener('mouseenter', () => {
+		cell.style.backgroundColor = '#669BBC';
+	});
+
+	cell.addEventListener('mouseleave', () => {
+		cell.style.transition = 'background-color 0.5s ease';
+		cell.style.backgroundColor = '#003049';
+	});
+
 	container.appendChild(cell);
 }
