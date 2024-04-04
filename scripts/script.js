@@ -1,5 +1,6 @@
 const container = document.querySelector('#container');
 const btn = document.querySelector('#btn');
+const clearBtn = document.querySelector('#clear-btn');
 
 const containerWidth = 960;
 const containerHeight = 960;
@@ -28,6 +29,11 @@ btn.addEventListener('click', () => {
 	}
 });
 
+clearBtn.addEventListener('click', () => {
+	removeGrid();
+	generateGrid();
+});
+
 generateGrid();
 
 function generateGrid() {
@@ -44,10 +50,10 @@ function generateGrid() {
 			cell.style.backgroundColor = getRGB();
 		});
 
-		cell.addEventListener('mouseleave', () => {
-			cell.style.transition = 'background-color 0.7s ease';
-			cell.style.backgroundColor = defaultBgColor;
-		});
+		// cell.addEventListener('mouseleave', () => {
+		// 	cell.style.transition = 'background-color 0.7s ease';
+		// 	cell.style.backgroundColor = defaultBgColor;
+		// });
 
 		container.appendChild(cell);
 	}
